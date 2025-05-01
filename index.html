@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <!-- swiper css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <title>Document</title>
+</head>
+<style>
+    body,h1,h2,h3,p{
+        margin: 0;
+    }
+    img{
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    header{
+      height: 60vh;
+      position: relative;
+    }
+    header img{
+      height: 100%;
+    }
+    header .textbox{
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%,-50%);
+      width: 50%;
+      text-align: center;
+      text-shadow: 2px 2px 4px #ddd;
+    }
+    header .textbox h1{
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+    header .textbox p{
+      font-size: 18px;
+    }
+    header nav{
+      position: absolute; left: 0; top: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 20px 100px;
+      box-sizing: border-box;
+      color: #fff;
+      align-items: center;
+    }
+    header nav .logo{
+      font-size: 32px;
+    }
+    header nav .menu{
+      display: flex;
+      width: 60%;
+      justify-content: space-between;
+    }
+    header nav .icon-box{
+      width: 80px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+
+    .s1{
+      padding: 50px 100px;
+      box-sizing: border-box;
+    }
+    .s1 h2{
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+    .s1 .container{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .s1 .container .item{
+      width: calc((100% - 60px)/4);
+    }
+    .s1 .container .item .imgbox{
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .s1 .container .item .imgbox:hover img{
+      scale: 1.2;
+    }
+    .s1 .container .item .imgbox img{
+      height: 300px;
+      transition: 1.5s;
+    }
+    .s1 .container .item .textbox{
+
+    }
+    .s1 .container .item .textbox h3{
+      margin-bottom: 8px;
+    }
+    
+
+    .s2{
+      padding: 50px 100px;
+      box-sizing: border-box;
+    }
+    .s2 h2{
+      font-size: 38px;
+      margin-bottom: 30px;
+    }
+    .s2 .container{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .s2 .container .item{
+      position: relative;
+      width: calc((100% - 20px)/2);
+    }
+    .s2 .container .item img{
+      height: 250px;
+    }
+    .s2 .container .item .textbox{
+      position: absolute; left: 50px; bottom: 50px;
+      color: white;
+    }
+
+    .s3{
+      padding: 50px 100px;
+      box-sizing: border-box;
+    }
+    .s3 h2{
+      font-size: 38px;
+      margin-bottom: 24px;
+    }
+    .s3 .container{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .s3 .container .item-s{
+      width: calc((100% - 40px)/4);
+    }
+    .s3 .container .item-b{
+      width: calc((100% - 40px)/4 * 2);
+    }
+    .s3 .container .item img{
+      height: 200px;
+    }
+    .s3 .container:nth-child(2){
+      margin-bottom: 30px;
+    }
+    @media (max-width:1200px){
+      header nav .menu{
+        width: 40%;
+      }
+      .s1 .container .item:nth-child(4){
+        display: none;
+      }
+      .s1 .container .item{
+        width: calc((100% - 40px)/3);
+      }
+    }
+
+    @media (max-width:800px){
+      header nav{
+        padding: 20px 20px;
+      }
+      header nav .menu{
+        width: 55%;
+      }
+      header .textbox{
+        left: 20px;
+        transform: translate(0,-50%);
+        text-align: left;
+      }
+      .s1 .container .item:nth-child(4){
+        display: block;
+      }
+      .s1 .container .item{
+        width: calc((100% - 20px)/2);
+      }
+      .s2 .container .item{
+        width: 100%;
+      }
+    }
+    
+    @media(max-width:500px){
+      header nav .menu{
+        display: none;
+      }
+      header .textbox h1{
+        font-size: 30px;
+      }
+      header .textbox p{
+        font-size: 13px;
+      }
+      .s1,.s2,.s3{
+        padding: 50px 20px;
+      }
+      .wrap section .container .item{
+        width: 100%;
+      } 
+      /* .s1 .container .item{
+        width: 100%;
+      }
+      .s2 .container .item{
+        width: 100%;
+      }
+      .s3 .container .item{
+        width: 100%;
+      } */
+    }
+</style>
+
+<body>
+  <div class="wrap">
+    <header>
+      <img src="./imgs/a1.jpg" alt="">
+      <div class="textbox">
+        <h1>simply dummy text of the printing</h1>
+        <p>fact that a reader will be distracted by the readable content of a page when looking at its layout is that it has a more-or-less normal distribution of letters, as opposed.</p>
+      </div>
+      <nav>
+        <div class="logo">HOME PAGE</div>
+        <div class="menu">
+          <p>menu1</p>
+          <p>menu2</p>
+          <p>menu3</p>
+          <p>menu4</p>
+          <p>menu5</p>
+        </div>
+        <div class="icon-box">
+          <i class="fa-brands fa-docker"></i>
+          <i class="fa-brands fa-discord"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="s1">
+        <h2>Contrary to popular belief</h2>
+        <div class="container">
+          <div class="item">
+            <div class="imgbox">
+              <img src="./imgs/a2.jpg" alt="">
+            </div>
+            <div class="textbox">
+              <h3>Hampden-Sydney College</h3>
+              <p>comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="imgbox">
+              <img src="./imgs/a2.jpg" alt="">
+            </div>
+            <div class="textbox">
+              <h3>Hampden-Sydney College</h3>
+              <p>comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="imgbox">
+              <img src="./imgs/a2.jpg" alt="">
+            </div>
+            <div class="textbox">
+              <h3>Hampden-Sydney College</h3>
+              <p>comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="imgbox">
+              <img src="./imgs/a2.jpg" alt="">
+            </div>
+            <div class="textbox">
+              <h3>Hampden-Sydney College</h3>
+              <p>comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s2">
+        <h2>comes from a line in section</h2>
+        <div class="container">
+          <div class="item">
+            <img src="./imgs/a3.jpg" alt="">
+            <div class="textbox">
+              <h3>standard chunk of Lorem Ipsum</h3>
+              <p>Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./imgs/a3.jpg" alt="">
+            <div class="textbox">
+              <h3>standard chunk of Lorem Ipsum</h3>
+              <p>Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s3">
+        <h2>variations of passages</h2>
+        <div class="container">
+          <div class="item item-s">
+            <img src="./imgs/a4.jpg" alt="">
+          </div>
+          <div class="item item-b">
+            <img src="./imgs/a4.jpg" alt="">
+          </div>
+          <div class="item item-s">
+            <img src="./imgs/a4.jpg" alt="">
+          </div>
+        </div>
+        <div class="container">
+          <div class="item item-s">
+            <img src="./imgs/a4.jpg" alt="">
+          </div>
+          <div class="item item-b">
+            <img src="./imgs/a4.jpg" alt="">
+          </div>
+          <div class="item item-s">
+            <img src="./imgs/a4.jpg" alt="">
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+   $(function(){
+    
+
+
+
+   });
+  </script>
+</body>
+</html>
